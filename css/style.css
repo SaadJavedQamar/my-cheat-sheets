@@ -1,0 +1,39 @@
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f4f4f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a5568;
+    --accent-primary: #2563eb;
+    --border-color: #e2e8f0;
+    --radius: 8px;
+    --max-width: 1200px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-code: #0f172a;
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --border-color: #334155;
+    }
+}
+
+/* Global Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+
+/* Navigation */
+header { background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+nav { max-width: var(--max-width); margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+
+/* Grid Layout for Index */
+.hero { text-align: center; padding: 4rem 2rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+.main-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: var(--max-width); margin: 3rem auto; padding: 0 2rem; }
+.category-card { background: var(--bg-primary); border: 1px solid var(--border-color); padding: 2rem; border-radius: var(--radius); text-decoration: none; transition: 0.3s; }
+.category-card:hover { border-color: var(--accent-primary); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
